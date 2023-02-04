@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdp36edlvva07"]
+[gd_scene load_steps=3 format=3 uid="uid://domruga4hdvry"]
 
-[ext_resource type="Script" path="res://Boss.gd" id="1_m8kbu"]
+[ext_resource type="Script" path="res://Boss/Boss.gd" id="1_mv3ws"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_787ky"]
 size = Vector3(1, 2.00151, 1)
 
 [node name="Boss" type="CharacterBody3D"]
-script = ExtResource("1_m8kbu")
+script = ExtResource("1_mv3ws")
 
 [node name="Pivot" type="Node3D" parent="."]
 

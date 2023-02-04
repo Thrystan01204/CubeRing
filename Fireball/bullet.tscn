@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://djs74uh3r2kaf"]
+
+[ext_resource type="Script" path="res://Fireball/Bullet.gd" id="1_q7jde"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rpwga"]
+
+[node name="Bullet" type="Area3D"]
+script = ExtResource("1_q7jde")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_rpwga")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
