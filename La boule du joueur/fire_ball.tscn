@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyfycnspb6dwb"]
+
+[ext_resource type="Script" path="res://fire_ball.gd" id="1_nbha3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtydi"]
+albedo_color = Color(0.8, 0.356863, 0.172549, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_cx5hv"]
+material = SubResource("StandardMaterial3D_jtydi")
+radius = 0.2
+height = 0.4
+
+[sub_resource type="Skin" id="Skin_4fqlq"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mn8ul"]
+margin = 0.4
+radius = 0.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hrvwp"]
+margin = 0.4
+radius = 0.3
+
+[node name="fire_ball" type="RigidBody3D"]
+collision_layer = 0
+gravity_scale = 0.0
+script = ExtResource("1_nbha3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_cx5hv")
+skin = SubResource("Skin_4fqlq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_mn8ul")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_hrvwp")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
