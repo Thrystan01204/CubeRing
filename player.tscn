@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcgfv1hnfpm7h"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_gaceq"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8jils"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dhma8"]
+radius = 0.665904
+height = 2.08708
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bwc03"]
+top_radius = 0.1
+bottom_radius = 0.05
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_gaceq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_8jils")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_dhma8")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.648306, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="AimCast" type="RayCast3D" parent="Head/Camera3D"]
+
+[node name="Hand" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(0.977025, -0.0243285, -0.211729, 0.17701, 0.645925, 0.742596, 0.118695, -0.763013, 0.635392, 0, -0.511172, -1.22052)
+mesh = SubResource("CylinderMesh_bwc03")
+
+[node name="Core" type="Node3D" parent="Head/Hand"]
+transform = Transform3D(1, 0, -7.45058e-09, 2.98023e-08, 1, 2.68221e-07, 7.45058e-09, 0, 1, 0.018066, 0.961959, -0.0271674)
