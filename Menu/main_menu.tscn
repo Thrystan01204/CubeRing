@@ -1,0 +1,289 @@
+[gd_scene load_steps=18 format=3 uid="uid://d1vbiuphb05hb"]
+
+[ext_resource type="Script" path="res://Menu/main_menu.gd" id="1_7rcgg"]
+[ext_resource type="PackedScene" uid="uid://1c1om8ufs6bt" path="res://Player/Asset/player_model.tscn" id="1_afy7l"]
+[ext_resource type="ArrayMesh" uid="uid://dw010w0bidyu0" path="res://Arena/Assets/Tree.obj" id="2_kiehq"]
+[ext_resource type="Texture2D" uid="uid://dfvab15g4nu46" path="res://Arena/Assets/grass.jpg" id="3_dx1uo"]
+[ext_resource type="Environment" uid="uid://defhs60n4l2ld" path="res://Arena/env.tres" id="3_li2gn"]
+[ext_resource type="AudioStream" uid="uid://d17e3qj3o1n5i" path="res://Menu/menu.ogg" id="6_7xdgj"]
+[ext_resource type="Material" uid="uid://dq1mvgknlgkl1" path="res://Arena/Assets/grass_mat.tres" id="7_s7q7k"]
+[ext_resource type="ArrayMesh" uid="uid://d0u0ersjjgd4d" path="res://Arena/Assets/grass.obj" id="8_1fev8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g228t"]
+albedo_texture = ExtResource("3_dx1uo")
+metallic_specular = 0.0
+uv1_scale = Vector3(30, 30, 30)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o3273"]
+material = SubResource("StandardMaterial3D_g228t")
+
+[sub_resource type="Gradient" id="Gradient_aexdx"]
+offsets = PackedFloat32Array(0.207885, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.660807, 0.759729, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1hivc"]
+gradient = SubResource("Gradient_aexdx")
+fill_from = Vector2(1, 0.230769)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vd677"]
+cull_mode = 2
+albedo_texture = SubResource("GradientTexture2D_1hivc")
+metallic_specular = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_47dlj"]
+material = SubResource("StandardMaterial3D_vd677")
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="Animation" id="Animation_3h852"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eeixg"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o3i7n"]
+_data = {
+"RESET": SubResource("Animation_3h852"),
+"fade_in": SubResource("Animation_eeixg")
+}
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_7rcgg")
+
+[node name="Player_model" parent="." instance=ExtResource("1_afy7l")]
+
+[node name="LeftThigh" parent="Player_model/Body/Belt" index="1"]
+transform = Transform3D(0.897296, -0.00637542, 0.441383, -0.0236543, 0.997765, 0.0624993, -0.440794, -0.066521, 0.89514, 0.21875, -0.1875, 0)
+
+[node name="LeftLeg" parent="Player_model/Body/Belt/LeftThigh" index="6"]
+transform = Transform3D(0.976296, -0.0236825, -0.21514, 0, 0.993996, -0.109419, 0.21644, 0.106825, 0.970434, 0, -0.8125, 0)
+
+[node name="RightThigh" parent="Player_model/Body/Belt" index="2"]
+transform = Transform3D(0.940179, 0.0113761, -0.340491, 0.0187695, 0.996195, 0.0851107, 0.340164, -0.0864101, 0.936388, -0.21875, -0.1875, 0)
+
+[node name="RightLeg" parent="Player_model/Body/Belt/RightThigh" index="6"]
+transform = Transform3D(0.991445, 0.0170371, 0.12941, -1.86265e-09, 0.991445, -0.130526, -0.130526, 0.12941, 0.982963, 0, -0.8125, 0)
+
+[node name="Chest" parent="Player_model/Body" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.99975, -0.0223699, 0, 0.0223699, 0.99975, 0, 1.625, 0)
+
+[node name="LeftUpperArm" parent="Player_model/Body/Chest" index="9"]
+transform = Transform3D(0.971736, -0.235794, 0.011421, 0.236066, 0.970873, -0.0409707, -0.0014277, 0.0425088, 0.999095, 0.4375, 0.90625, 0)
+
+[node name="LeftLowerArm" parent="Player_model/Body/Chest/LeftUpperArm" index="3"]
+transform = Transform3D(1, 0, 0, 0, 0.997967, 0.0637406, 0, -0.0637406, 0.997967, 0.0625, -0.5, 0)
+
+[node name="Head" parent="Player_model/Body/Chest/Neck" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999048, -0.0436194, 0, 0.0436194, 0.999048, 0, 0.28125, 0)
+
+[node name="RightUpperArm" parent="Player_model/Body/Chest" index="11"]
+transform = Transform3D(0.976536, 0.215297, 0.00504285, -0.215355, 0.976317, 0.0206583, -0.00047575, -0.0212596, 0.999774, -0.4375, 0.90625, 0)
+
+[node name="RightLowerArm" parent="Player_model/Body/Chest/RightUpperArm" index="3"]
+transform = Transform3D(1, 0, 0, 0, 0.997967, 0.0637406, 0, -0.0637406, 0.997967, 0, -0.5, 0)
+
+[node name="AnimationPlayer" parent="Player_model" index="1"]
+autoplay = "idle"
+
+[node name="Tree" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.12863, 0, -7.32487)
+mesh = ExtResource("2_kiehq")
+
+[node name="Tree2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.523813, 0, -0.667611, 0, 0.848578, 0, 0.667611, 0, 0.523813, 5.64269, 0, -6.10836)
+mesh = ExtResource("2_kiehq")
+
+[node name="Tree4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.614652, 0, -0.334966, 0, 0.7, 0, 0.334966, 0, -0.614652, 8.4095, 0, -2.4316)
+mesh = ExtResource("2_kiehq")
+
+[node name="Tree5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.18682, 0, 0.67461, 0, 0.7, 0, -0.67461, 0, -0.18682, 6.72851, -4.76837e-07, 2.32552)
+mesh = ExtResource("2_kiehq")
+
+[node name="Tree6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.421499, 0, -0.268959, 0, 0.5, 0, 0.268959, 0, -0.421499, 7.39128, -4.76837e-07, 4.71878)
+mesh = ExtResource("2_kiehq")
+
+[node name="Tree3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.615962, 0, 0.643896, 0, 0.892162, 0, -0.645401, 0, 0.614526, 0.225586, -9.53674e-07, -8.12267)
+mesh = ExtResource("2_kiehq")
+
+[node name="Tree7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.184005, 0, 1.19439, 0, 1.21484, 0, -1.19439, 0, 0.184005, -3.27137, -1.83905e-06, -11.0968)
+mesh = ExtResource("2_kiehq")
+
+[node name="Tree8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.960287, 0, 0.540211, 0, 1.03089, 0, -0.540211, 0, 0.960287, 11.029, -1.83905e-06, -9.61897)
+mesh = ExtResource("2_kiehq")
+
+[node name="Tree9" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.306498, 0, -0.849886, 0, 0.850391, 0, 0.849886, 0, 0.306498, 14.3902, -1.83905e-06, -5.15227)
+mesh = ExtResource("2_kiehq")
+
+[node name="Tree10" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.881118, 0, -0.103835, 0, 0.850391, 0, 0.103835, 0, -0.881118, 12.3481, -2.41833e-06, 0.626882)
+mesh = ExtResource("2_kiehq")
+
+[node name="Tree11" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.261094, 0, -0.592428, 0, 0.607422, 0, 0.592428, 0, 0.261094, 13.1532, -2.41833e-06, 3.53432)
+mesh = ExtResource("2_kiehq")
+
+[node name="Tree12" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.70669, 0, 0.91621, 0, 1.08384, 0, -0.918352, 0, -0.705042, 4.44801, -2.99762e-06, -12.066)
+mesh = ExtResource("2_kiehq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(13.5091, 0, 0, 0, 12.9759, 0, 0, 0, 15.5776, 3.21024, 0, -7.95474)
+mesh = SubResource("PlaneMesh_o3273")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.821259, 0, -0.570556, 0, 1, 0, 0.570556, 0, 0.821259, -0.134264, 1.95905, 4.28657)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_li2gn")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(45.271, 0, 0, 0, 15, 0, 0, 0, 45.271, 0, 0, 0)
+mesh = SubResource("CylinderMesh_47dlj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.0413081, 0.960814, -0.2741, -0.0742832, 0.276529, 0.95813, 0.996381, -0.0192174, 0.0827952, 0, 10.6606, 0)
+shadow_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+autoplay = "fade_in"
+libraries = {
+"": SubResource("AnimationLibrary_o3i7n")
+}
+
+[node name="Control2" type="Control" parent="CanvasLayer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container2" type="Container" parent="CanvasLayer/Control2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/Control2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Cube Ring"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Control2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+text = "Play"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+text = "Quit
+"
+
+[node name="Container" type="Container" parent="CanvasLayer/Control2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_7xdgj")
+autoplay = true
+
+[node name="Grass" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.693771, 0, -0.0885665, 0, 0.699402, 0, 0.0885665, 0, 0.693771, 3.7429, 0.0581841, -0.0978248)
+material_override = ExtResource("7_s7q7k")
+mesh = ExtResource("8_1fev8")
+
+[node name="Grass2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.605296, 0, 0.350398, 0, 0.699402, 0, -0.350398, 0, 0.605296, 2.5777, 0.0581841, -2.1953)
+material_override = ExtResource("7_s7q7k")
+mesh = ExtResource("8_1fev8")
+
+[node name="Grass3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.689167, 0, 0.119213, 0, 0.699402, 0, -0.119213, 0, 0.689167, 6.73965, -0.0868291, -0.67698)
+material_override = ExtResource("7_s7q7k")
+mesh = ExtResource("8_1fev8")
+
+[node name="Grass7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.693771, 0, -0.0885665, 0, 0.699402, 0, 0.0885665, 0, 0.693771, -1.64154, -0.0868291, 0.277047)
+material_override = ExtResource("7_s7q7k")
+mesh = ExtResource("8_1fev8")
+
+[node name="Grass8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.639732, 0, 0.282676, 0, 0.699402, 0, -0.282676, 0, 0.639732, -2.01751, -0.0868295, -4.35957)
+material_override = ExtResource("7_s7q7k")
+mesh = ExtResource("8_1fev8")
+
+[node name="Grass6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.605296, 0, 0.350398, 0, 0.699402, 0, -0.350398, 0, 0.605296, 2.57326, -0.0735652, 2.07356)
+material_override = ExtResource("7_s7q7k")
+mesh = ExtResource("8_1fev8")
+
+[node name="Grass5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.605296, 0, 0.350398, 0, 0.699402, 0, -0.350398, 0, 0.605296, -3.95214, -0.230813, -3.51107)
+material_override = ExtResource("7_s7q7k")
+mesh = ExtResource("8_1fev8")
+
+[connection signal="pressed" from="CanvasLayer/Control2/VBoxContainer/Button" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control2/VBoxContainer/Button2" to="." method="_on_quit_pressed"]
+
+[editable path="Player_model"]

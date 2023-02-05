@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="CubeRing"
+run/main_scene="res://Menu/main_menu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+driver/mix_rate=48000

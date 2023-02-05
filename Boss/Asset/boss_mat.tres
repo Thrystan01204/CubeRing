@@ -5,5 +5,8 @@
 [resource]
 albedo_texture = ExtResource("1_7rhh6")
 metallic_specular = 0.0
+emission_enabled = true
+emission_energy_multiplier = 0.25
+emission_texture = ExtResource("1_7rhh6")
 uv1_scale = Vector3(1, -1, 1)
 texture_filter = 0
