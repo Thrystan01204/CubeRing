@@ -5,7 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dw010w0bidyu0" path="res://Arena/Assets/Tree.obj" id="2_kiehq"]
 [ext_resource type="Texture2D" uid="uid://dfvab15g4nu46" path="res://Arena/Assets/grass.jpg" id="3_dx1uo"]
 [ext_resource type="Environment" uid="uid://defhs60n4l2ld" path="res://Arena/env.tres" id="3_li2gn"]
-[ext_resource type="AudioStream" uid="uid://d17e3qj3o1n5i" path="res://Menu/menu.ogg" id="6_7xdgj"]
+[ext_resource type="AudioStream" uid="uid://bwrekbpwd8khx" path="res://Menu/menu.ogg" id="6_7xdgj"]
 [ext_resource type="Material" uid="uid://dq1mvgknlgkl1" path="res://Arena/Assets/grass_mat.tres" id="7_s7q7k"]
 [ext_resource type="ArrayMesh" uid="uid://d0u0ersjjgd4d" path="res://Arena/Assets/grass.obj" id="8_1fev8"]
 

@@ -19,10 +19,6 @@ run/main_scene="res://Menu/main_menu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
-[audio]
-
-driver/mix_rate=48000
-
 [rendering]
 
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=4

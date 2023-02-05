@@ -256,65 +256,61 @@ buffer = PackedFloat32Array(0.739614, 0, 0.336255, -37.4236, 0, 0.812463, 0, -0.
 script = ExtResource("1_4m4pw")
 
 [node name="Player_model" parent="." instance=ExtResource("1_5jjw6")]
-transform = Transform3D(-0.625787, 0, -0.779994, 0, 1, 0, 0.779994, 0, -0.625787, 6.47581, 0, 6.58623)
-visible = false
+transform = Transform3D(-0.625787, 0, -0.779994, 0, 1, 0, 0.779994, 0, -0.625787, 26.3645, 0, 20.1546)
+
+[node name="Body" parent="Player_model" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0625, 0)
 
 [node name="Belt" parent="Player_model/Body" index="0"]
-transform = Transform3D(0.999048, -0.0436194, 0, 0.0436194, 0.999048, 0, 0, 0, 1, 0, 1.625, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.625, 0)
 
 [node name="LeftThigh" parent="Player_model/Body/Belt" index="1"]
-transform = Transform3D(0.819463, 0.0234083, 0.572655, -0.0235819, 0.999697, -0.00711908, -0.572648, -0.00767044, 0.819766, 0.21875, -0.1875, 0)
+transform = Transform3D(0.996195, 0.029809, 0.0818996, 0, 0.939693, -0.34202, -0.0871558, 0.340719, 0.936117, 0.21875, -0.1875, 0)
 
 [node name="LeftLeg" parent="Player_model/Body/Belt/LeftThigh" index="6"]
-transform = Transform3D(0.976296, -0.018864, -0.215616, 0, 0.996195, -0.0871557, 0.21644, 0.0850898, 0.972581, 0, -0.8125, 0)
+transform = Transform3D(0.991445, -0.0337827, -0.126079, 3.72529e-09, 0.965926, -0.258819, 0.130526, 0.256605, 0.957662, 0, -0.8125, 0)
 
 [node name="LeftFoot" parent="Player_model/Body/Belt/LeftThigh/LeftLeg" index="1"]
-transform = Transform3D(1, 0, 0, 0, 0.999048, 0.0436194, 0, -0.0436194, 0.999048, 0, -0.5625, 0)
+transform = Transform3D(1, 0, 0, 0, 0.984807, 0.173648, 0, -0.173648, 0.984807, 0, -0.5625, 0)
 
 [node name="RightThigh" parent="Player_model/Body/Belt" index="2"]
-transform = Transform3D(0.647777, 0.143692, -0.748156, -0.0614976, 0.988709, 0.136647, 0.759344, -0.0425069, 0.6493, -0.21875, -0.1875, 0)
+transform = Transform3D(0.996195, 0.0262082, -0.0831219, -2.79397e-09, 0.953717, 0.300706, 0.0871557, -0.299561, 0.950088, -0.21875, -0.1875, 0)
 
 [node name="RightLeg" parent="Player_model/Body/Belt/RightThigh" index="6"]
-transform = Transform3D(0.991445, 0.0170371, 0.12941, -1.86265e-09, 0.991445, -0.130526, -0.130526, 0.12941, 0.982963, 0, -0.8125, 0)
+transform = Transform3D(0.991445, 0.028251, 0.127432, -9.31323e-10, 0.976296, -0.21644, -0.130526, 0.214588, 0.967944, 0, -0.8125, 0)
 
 [node name="RightFoot" parent="Player_model/Body/Belt/RightThigh/RightLeg" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5625, 0)
+transform = Transform3D(1, 0, 0, 0, 0.999048, 0.0436194, 0, -0.0436194, 0.999048, 0, -0.5625, 0)
 
 [node name="Chest" parent="Player_model/Body" index="1"]
-transform = Transform3D(1, 0, 0, 0, 0.991445, 0.130526, 0, -0.130526, 0.991445, 0, 1.625, 0)
+transform = Transform3D(0.999048, -0.0436194, 5.82077e-11, 0.0435779, 0.998097, 0.0436194, -0.00190265, -0.0435779, 0.999048, 0, 1.625, 0)
 
 [node name="LeftUpperArm" parent="Player_model/Body/Chest" index="9"]
-transform = Transform3D(0.772984, -0.626033, 0.102847, 0.620777, 0.712906, -0.32619, 0.130885, 0.315985, 0.939693, 0.4375, 0.90625, 0)
+transform = Transform3D(0.976296, -0.209065, -0.0560187, 0.21644, 0.943029, 0.252684, 3.72529e-09, -0.258819, 0.965926, 0.4375, 0.90625, 0)
 
 [node name="LeftLowerArm" parent="Player_model/Body/Chest/LeftUpperArm" index="3"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.0625, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0.0625, -0.5, 0)
 
 [node name="Head" parent="Player_model/Body/Chest/Neck" index="1"]
-transform = Transform3D(1, 0, 0, 0, 0.999048, -0.0436194, 0, 0.0436194, 0.999048, 0, 0.28125, 0)
+transform = Transform3D(0.999048, 0.0436194, 1.74623e-10, -0.0435779, 0.998097, -0.0436194, -0.00190265, 0.0435779, 0.999048, 0, 0.28125, 0)
 
 [node name="RightUpperArm" parent="Player_model/Body/Chest" index="11"]
-transform = Transform3D(0.843466, 0.491517, -0.216742, -0.537023, 0.781384, -0.317877, 0.0131166, 0.384513, 0.923026, -0.4375, 0.90625, 0)
+transform = Transform3D(0.965926, 0.25, -0.0669873, -0.258819, 0.933013, -0.25, 1.49012e-08, 0.258819, 0.965926, -0.4375, 0.90625, 0)
 
 [node name="RightLowerArm" parent="Player_model/Body/Chest/RightUpperArm" index="3"]
-transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 0.953717, 0.300706, 0, -0.300706, 0.953717, 0, -0.5, 0)
 
 [node name="AnimationPlayer" parent="Player_model" index="1"]
 autoplay = "idle"
 
 [node name="Boss_model" parent="." instance=ExtResource("2_vaq6b")]
-transform = Transform3D(0.510903, 0, 0.859638, 0, 1, 0, -0.859638, 0, 0.510903, -2.086, 0, 0)
+transform = Transform3D(0.510903, 0, 0.859638, 0, 1, 0, -0.859638, 0, 0.510903, -2.086, -14.3193, 0)
 
 [node name="Body" parent="Boss_model" index="0"]
 transform = Transform3D(0.999999, -0.000503145, -0.00103985, 0.000508755, 0.999986, 0.00540235, 0.00103712, -0.00540288, 0.999985, 0, 5.52187, 0.0625)
 
-[node name="LeftLowerArm" parent="Boss_model/Body" index="25"]
-transform = Transform3D(0.994274, -0.0833467, 0.0668724, 0.0838928, 0.99646, -0.00539518, -0.066186, 0.0109744, 0.997747, 1.0362, 0.486894, -0.11407)
-
 [node name="LeftLowerForearm" parent="Boss_model/Body/LeftLowerArm" index="2"]
 transform = Transform3D(-0.744044, 0.660487, -0.100777, -0.603316, -0.59937, 0.526085, 0.28707, 0.452231, 0.84444, 1.3165, -0.4125, 0.841905)
-
-[node name="LeftLowerHand" parent="Boss_model/Body/LeftLowerArm/LeftLowerForearm" index="4"]
-transform = Transform3D(0.925175, 0.364131, 0.107051, -0.251022, 0.798605, -0.547009, -0.284674, 0.479207, 0.830254, 1.85241, -0.446747, 1.26591)
 
 [node name="LeftLowerFinger1" parent="Boss_model/Body/LeftLowerArm/LeftLowerForearm/LeftLowerHand" index="1"]
 transform = Transform3D(0.962254, -0.112213, 0.247942, 0.133197, 0.98865, -0.0694915, -0.237329, 0.0998935, 0.96628, 0.675394, -0.0744871, 0.242328)
@@ -361,17 +357,11 @@ transform = Transform3D(0.981355, 0.192152, -0.00434061, -0.191608, 0.976311, -0
 [node name="LeftUpperThumb1" parent="Boss_model/Body/LeftUpperArm/LeftUpperForearm/LeftUpperHand" index="3"]
 transform = Transform3D(0.982592, 0.160433, -0.0936686, -0.156595, 0.986542, 0.0470241, 0.0999522, -0.0315374, 0.994493, 0.185827, -0.139263, 0.398709)
 
-[node name="LeftUpperThumb2" parent="Boss_model/Body/LeftUpperArm/LeftUpperForearm/LeftUpperHand/LeftUpperThumb1" index="1"]
-transform = Transform3D(1, 0, 0, 0, 0.793353, -0.608761, 0, 0.608761, 0.793353, 0.117424, -0.171051, 0.292721)
-
 [node name="MiddleNeck" parent="Boss_model/Body" index="28"]
 transform = Transform3D(0.976315, -0.182141, 0.116759, 0.21609, 0.847475, -0.484863, -0.0106367, 0.498609, 0.866762, 0, 3.10938, 0.812501)
 
 [node name="MiddleHead" parent="Boss_model/Body/MiddleNeck" index="2"]
 transform = Transform3D(0.967221, 0.241777, -0.0776305, -0.220664, 0.951539, 0.2142, 0.125657, -0.190049, 0.9737, 0, 0.66859, -0.1869)
-
-[node name="RightLowerArm" parent="Boss_model/Body" index="33"]
-transform = Transform3D(0.689562, -0.291941, -0.662778, 0.660712, -0.121184, 0.740793, -0.296586, -0.948728, 0.109325, -1.0362, 0.486894, -0.11407)
 
 [node name="RightLowerForearm" parent="Boss_model/Body/RightLowerArm" index="2"]
 transform = Transform3D(-0.0908877, -0.995489, -0.0271903, 0.551514, -0.0275814, -0.833709, 0.829199, -0.0907697, 0.551534, -1.3165, -0.4125, 0.841905)
@@ -381,12 +371,6 @@ transform = Transform3D(0.851003, -0.518391, -0.0840497, 0.433293, 0.783517, -0.
 
 [node name="RightLowerFinger1" parent="Boss_model/Body/RightLowerArm/RightLowerForearm/RightLowerHand" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.675394, -0.0744871, 0.242328)
-
-[node name="RightLowerFinger2" parent="Boss_model/Body/RightLowerArm/RightLowerForearm/RightLowerHand/RightLowerFinger1" index="1"]
-transform = Transform3D(0.421023, -0.905049, -0.0602095, 0.544282, 0.305182, -0.781422, 0.7256, 0.296226, 0.621091, -0.358379, -0.124902, 0.219879)
-
-[node name="RightLowerIndex1" parent="Boss_model/Body/RightLowerArm/RightLowerForearm/RightLowerHand" index="2"]
-transform = Transform3D(0.953789, -0.0501801, 0.296258, 0.0537697, 0.998545, -0.00397539, -0.295628, 0.0197214, 0.9551, -0.484849, -0.186167, 0.511947)
 
 [node name="RightLowerIndex2" parent="Boss_model/Body/RightLowerArm/RightLowerForearm/RightLowerHand/RightLowerIndex1" index="1"]
 transform = Transform3D(0.270662, -0.95945, -0.0787203, 0.617619, 0.235791, -0.750299, 0.738436, 0.154459, 0.656395, -0.369682, -0.111183, 0.186759)
@@ -427,20 +411,11 @@ transform = Transform3D(0.992432, 0.115764, -0.0409511, -0.122716, 0.946854, -0.
 [node name="RightUpperThumb2" parent="Boss_model/Body/RightUpperArm/RightUpperForearm/RightUpperHand/RightUpperThumb1" index="1"]
 transform = Transform3D(0.999999, 0, 0, 0, 0.819152, -0.573576, 0, 0.573576, 0.819152, -0.117424, -0.171051, 0.292721)
 
-[node name="Tail1" parent="Boss_model/Body" index="36"]
-transform = Transform3D(0.999997, -0.00237405, 0.000287371, 0.00231624, 0.991445, 0.130505, -0.000594738, -0.130504, 0.991448, 0, -0.521234, 0)
-
 [node name="Tail2" parent="Boss_model/Body/Tail1" index="2"]
 transform = Transform3D(0.999972, 0.00758455, 0.000226146, -0.00757541, 0.996167, 0.0871414, 0.00043565, -0.0871406, 0.996196, 0, -0.791266, 0)
 
 [node name="Tail3" parent="Boss_model/Body/Tail1/Tail2" index="2"]
 transform = Transform3D(0.999924, -0.0123343, 0.000313854, 0.0120925, 0.984738, 0.17362, -0.00245055, -0.173603, 0.984813, 0, -0.875, 0)
-
-[node name="Tail4" parent="Boss_model/Body/Tail1/Tail2/Tail3" index="2"]
-transform = Transform3D(0.999997, -0.00237405, 0.000287371, 0.00231624, 0.991445, 0.130505, -0.000594738, -0.130504, 0.991448, 0, -0.75, 0)
-
-[node name="Tail5" parent="Boss_model/Body/Tail1/Tail2/Tail3/Tail4" index="2"]
-transform = Transform3D(0.999992, 0.00380866, -0.00115718, -0.00396882, 0.976296, -0.216402, 0.000305545, 0.216405, 0.976304, 0, -0.5, 0)
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -850,11 +825,11 @@ transform = Transform3D(0.681419, 0.671973, 0.290035, -0.0359086, -0.365108, 0.9
 shadow_enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_j6kho")
+stream = ExtResource("6_rfc45")
 autoplay = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.590827, 0.0124864, 0.806701, -0.020942, 0.999781, -0.000137065, -0.806526, -0.0168129, 0.590959, 6.06946, 3.06565, 6.26954)
+transform = Transform3D(-0.993972, 0, 0.10963, 0, 1, 0, -0.10963, 0, -0.993972, 16.0019, 4.36691, 4.33664)
 fov = 90.0
 
 [node name="Intro" type="AnimationPlayer" parent="."]
@@ -865,6 +840,7 @@ libraries = {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="healthbar" type="Control" parent="CanvasLayer"]
+visible = false
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 3
 anchors_preset = 12
@@ -933,6 +909,7 @@ skeleton = NodePath("../..")
 
 [node name="FPSPlayer" parent="." instance=ExtResource("15_88qtc")]
 transform = Transform3D(0.605211, 0, 0.796065, 0, 1, 0, -0.796065, 0, 0.605211, 6.476, 0, 6.586)
+visible = false
 
 [editable path="Player_model"]
 [editable path="Boss_model"]
