@@ -1,17 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://domruga4hdvry"]
+[gd_scene load_steps=4 format=3 uid="uid://domruga4hdvry"]
 
 [ext_resource type="Script" path="res://Boss/Boss.gd" id="1_mv3ws"]
+[ext_resource type="PackedScene" uid="uid://cbnyxt7gmmpeg" path="res://Boss/Asset/boss_model.tscn" id="2_0dm48"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_787ky"]
-size = Vector3(1, 2.00151, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_48qq8"]
+size = Vector3(5.38172, 9.75097, 3.32663)
 
 [node name="Boss" type="CharacterBody3D"]
 script = ExtResource("1_mv3ws")
 
 [node name="Pivot" type="Node3D" parent="."]
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Pivot"]
+[node name="Boss_model" parent="Pivot" instance=ExtResource("2_0dm48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.316627, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00516009, 0)
-shape = SubResource("BoxShape3D_787ky")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.82182, 1.36306)
+shape = SubResource("BoxShape3D_48qq8")
