@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" uid="uid://h53pvnggifjk" path="res://Player/Asset/player_texture.png" id="1_5csm2"]
+
+[resource]
+albedo_texture = ExtResource("1_5csm2")
+uv1_scale = Vector3(1, -1, 1)
+texture_filter = 0
