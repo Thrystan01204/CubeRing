@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://1kta0jcq3cne"]
+
+[ext_resource type="PackedScene" uid="uid://cws0ksj5f52bt" path="res://Player/FPSPlayer.tscn" id="1_sqf5a"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_fadf5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dkw4n"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5vdpr"]
+material = SubResource("StandardMaterial3D_dkw4n")
+
+[sub_resource type="BoxMesh" id="BoxMesh_a0uq3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yr1df"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_tg21h"]
+rayleigh_color = Color(0.301961, 0.403922, 0.6, 1)
+ground_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Sky" id="Sky_c3atp"]
+sky_material = SubResource("PhysicalSkyMaterial_tg21h")
+
+[sub_resource type="Environment" id="Environment_51kod"]
+background_mode = 2
+sky = SubResource("Sky_c3atp")
+ssao_enabled = true
+glow_enabled = true
+
+[node name="TestFPSPlayer" type="Node3D"]
+
+[node name="FPSPlayer" parent="." instance=ExtResource("1_sqf5a")]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape3D_fadf5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_5vdpr")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.58661, 0.731894, -0.346729, 0.524833, -0.0174846, 0.851026, 0.616798, -0.681195, -0.394379, -2.62604, 12.4764, -0.989003)
+shadow_enabled = true
+
+[node name="StaticBox" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -6.41815)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBox"]
+mesh = SubResource("BoxMesh_a0uq3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBox"]
+shape = SubResource("BoxShape3D_yr1df")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_51kod")

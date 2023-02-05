@@ -2,7 +2,7 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://bx3akr1rxgoag"
+uid="uid://2vgpxel0y1gg"
 path="res://.godot/imported/music_boss_phase_3.ogg-bc29dff57ddcd550c08f578a33881513.oggvorbisstr"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/music_boss_phase_3.ogg-bc29dff57ddcd550c08f57
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0.0
 bpm=0.0
 beat_count=0
