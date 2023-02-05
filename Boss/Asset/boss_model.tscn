@@ -1,0 +1,134 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbnyxt7gmmpeg"]
+
+[ext_resource type="PackedScene" uid="uid://bh6ccsiwg7wss" path="res://Boss/Asset/Boss.glb" id="1_lt4ut"]
+
+[node name="Boss_model" instance=ExtResource("1_lt4ut")]
+
+[node name="Body" parent="." index="0"]
+transform = Transform3D(0.999999, -0.000517925, -0.00105001, 0.000523599, 0.999985, 0.00540995, 0.0010472, -0.00541049, 0.999985, 0, 5.5, 0.0625)
+
+[node name="LeftLowerArm" parent="Body" index="25"]
+transform = Transform3D(0.994274, -0.0833468, 0.0668724, 0.0838929, 0.99646, -0.00539518, -0.066186, 0.0109744, 0.997747, 1.0362, 0.486894, -0.11407)
+
+[node name="LeftLowerForearm" parent="Body/LeftLowerArm" index="2"]
+transform = Transform3D(-0.752892, 0.649544, -0.106053, -0.597243, -0.606594, 0.524734, 0.276506, 0.458407, 0.844634, 1.3165, -0.4125, 0.841905)
+
+[node name="LeftLowerHand" parent="Body/LeftLowerArm/LeftLowerForearm" index="4"]
+transform = Transform3D(0.925175, 0.364131, 0.107051, -0.251022, 0.798605, -0.547009, -0.284674, 0.479207, 0.830254, 1.85241, -0.446747, 1.26591)
+
+[node name="LeftLowerFinger1" parent="Body/LeftLowerArm/LeftLowerForearm/LeftLowerHand" index="1"]
+transform = Transform3D(0.957753, -0.145718, 0.247941, 0.16761, 0.983401, -0.0694914, -0.2337, 0.108113, 0.96628, 0.675394, -0.0744871, 0.242328)
+
+[node name="LeftLowerFinger2" parent="Body/LeftLowerArm/LeftLowerForearm/LeftLowerHand/LeftLowerFinger1" index="1"]
+transform = Transform3D(0.996195, -1.49012e-08, -0.0871557, -0.0805214, 0.382683, -0.920364, 0.033353, 0.92388, 0.381227, 0.358379, -0.124902, 0.219879)
+
+[node name="LeftLowerIndex2" parent="Body/LeftLowerArm/LeftLowerForearm/LeftLowerHand/LeftLowerIndex1" index="1"]
+transform = Transform3D(0.991467, 0.130354, 0.00033511, -0.130353, 0.991445, 0.0067173, 0.000543383, -0.00670367, 0.999977, 0.369682, -0.111183, 0.186759)
+
+[node name="LeftLowerThumb1" parent="Body/LeftLowerArm/LeftLowerForearm/LeftLowerHand" index="3"]
+transform = Transform3D(0.953717, -0.090424, -0.286788, 3.72529e-09, 0.953717, -0.300706, 0.300706, 0.286788, 0.909576, 0.185827, -0.139263, 0.398709)
+
+[node name="LeftHead" parent="Body/LeftNeck" index="2"]
+transform = Transform3D(0.965926, 0.0337827, -0.256605, 0, 0.991445, 0.130526, 0.258819, -0.126079, 0.957662, 2.38255e-06, 0.567656, -0.269685)
+
+[node name="LeftUpperArm" parent="Body" index="27"]
+transform = Transform3D(0.980069, 0.148677, 0.131757, -0.164444, 0.979283, 0.118169, -0.111458, -0.13748, 0.984214, 1.89245, 1.96189, 0.91093)
+
+[node name="LeftUpperForearm" parent="Body/LeftUpperArm" index="2"]
+transform = Transform3D(0.754208, 0.615212, -0.229532, -0.648217, 0.753363, -0.110715, 0.104808, 0.232289, 0.966984, 1.5, -0.39375, 0.9375)
+
+[node name="LeftUpperHand" parent="Body/LeftUpperArm/LeftUpperForearm" index="4"]
+transform = Transform3D(0.449228, 0.0659569, -0.890979, 0.165462, 0.973877, 0.155519, 0.877962, -0.217286, 0.42658, 1.85241, -0.446747, 1.26591)
+
+[node name="LeftUpperFinger1" parent="Body/LeftUpperArm/LeftUpperForearm/LeftUpperHand" index="1"]
+transform = Transform3D(0.878555, 0.198794, 0.434306, 0.124339, 0.782737, -0.609805, -0.461173, 0.589749, 0.66296, 0.675394, -0.0744871, 0.242328)
+
+[node name="LeftUpperFinger2" parent="Body/LeftUpperArm/LeftUpperForearm/LeftUpperHand/LeftUpperFinger1" index="1"]
+transform = Transform3D(0.178854, 0.915318, -0.360838, -0.530906, -0.218989, -0.818647, -0.828342, 0.337989, 0.446781, 0.358379, -0.124902, 0.219879)
+
+[node name="LeftUpperIndex1" parent="Body/LeftUpperArm/LeftUpperForearm/LeftUpperHand" index="2"]
+transform = Transform3D(0.940062, 0.340035, -0.0257034, -0.339197, 0.940169, 0.0320718, 0.035071, -0.021431, 0.999155, 0.484849, -0.186167, 0.511947)
+
+[node name="LeftUpperIndex2" parent="Body/LeftUpperArm/LeftUpperForearm/LeftUpperHand/LeftUpperIndex1" index="1"]
+transform = Transform3D(-0.154358, 0.986975, -0.0453214, -0.494246, -0.116854, -0.861432, -0.855508, -0.110569, 0.505846, 0.369682, -0.111183, 0.186759)
+
+[node name="LeftUpperThumb1" parent="Body/LeftUpperArm/LeftUpperForearm/LeftUpperHand" index="3"]
+transform = Transform3D(0.880297, 0.225048, -0.41765, -0.379669, 0.862052, -0.335734, 0.28448, 0.454114, 0.844305, 0.185827, -0.139263, 0.398709)
+
+[node name="LeftUpperThumb2" parent="Body/LeftUpperArm/LeftUpperForearm/LeftUpperHand/LeftUpperThumb1" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.793353, -0.608761, 0, 0.608761, 0.793353, 0.117424, -0.171051, 0.292721)
+
+[node name="MiddleNeck" parent="Body" index="28"]
+transform = Transform3D(0.976316, -0.182133, 0.116766, 0.216087, 0.847476, -0.484863, -0.0106463, 0.498611, 0.866761, 0, 3.10938, 0.812501)
+
+[node name="MiddleHead" parent="Body/MiddleNeck" index="2"]
+transform = Transform3D(0.966014, 0.248713, -0.070417, -0.229199, 0.950116, 0.211537, 0.119516, -0.188209, 0.97483, 0, 0.66859, -0.1869)
+
+[node name="RightLowerArm" parent="Body" index="33"]
+transform = Transform3D(0.689562, -0.291941, -0.662778, 0.660712, -0.121184, 0.740793, -0.296586, -0.948728, 0.109325, -1.0362, 0.486894, -0.11407)
+
+[node name="RightLowerForearm" parent="Body/RightLowerArm" index="2"]
+transform = Transform3D(-0.0960646, -0.995208, -0.0182302, 0.545934, -0.0373654, -0.836994, 0.832302, -0.090358, 0.546908, -1.3165, -0.4125, 0.841905)
+
+[node name="RightLowerHand" parent="Body/RightLowerArm/RightLowerForearm" index="4"]
+transform = Transform3D(0.855493, -0.509966, -0.0898173, 0.422319, 0.787515, -0.448851, 0.299631, 0.346057, 0.889081, -1.85241, -0.446747, 1.26591)
+
+[node name="RightLowerFinger1" parent="Body/RightLowerArm/RightLowerForearm/RightLowerHand" index="1"]
+transform = Transform3D(0.985402, 0.135843, -0.102617, -0.145359, 0.985115, -0.0917581, 0.0886245, 0.105335, 0.99048, -0.675394, -0.0744871, 0.242328)
+
+[node name="RightLowerFinger2" parent="Body/RightLowerArm/RightLowerForearm/RightLowerHand/RightLowerFinger1" index="1"]
+transform = Transform3D(0.421023, -0.905049, -0.0602095, 0.544282, 0.305182, -0.781422, 0.7256, 0.296226, 0.621091, -0.358379, -0.124902, 0.219879)
+
+[node name="RightLowerIndex1" parent="Body/RightLowerArm/RightLowerForearm/RightLowerHand" index="2"]
+transform = Transform3D(0.953789, -0.0501801, 0.296258, 0.0537696, 0.998545, -0.00397539, -0.295628, 0.0197214, 0.9551, -0.484849, -0.186167, 0.511947)
+
+[node name="RightLowerIndex2" parent="Body/RightLowerArm/RightLowerForearm/RightLowerHand/RightLowerIndex1" index="1"]
+transform = Transform3D(0.22676, -0.972682, -0.0496941, 0.614263, 0.182425, -0.767725, 0.755818, 0.143564, 0.638849, -0.369682, -0.111183, 0.186759)
+
+[node name="RightLowerThumb1" parent="Body/RightLowerArm/RightLowerForearm/RightLowerHand" index="3"]
+transform = Transform3D(0.989348, 0.0201992, -0.144163, -0.0161695, 0.999447, 0.0290699, 0.144671, -0.0264292, 0.989127, -0.185827, -0.139263, 0.398709)
+
+[node name="RightHead" parent="Body/RightNeck" index="2"]
+transform = Transform3D(0.965926, -0.0449434, 0.254887, 1.86265e-09, 0.984808, 0.173648, -0.258819, -0.167731, 0.951251, -2.38255e-06, 0.567656, -0.269685)
+
+[node name="RightUpperArm" parent="Body" index="35"]
+transform = Transform3D(0.96817, -0.206933, -0.140801, 0.178898, 0.965557, -0.188931, 0.175047, 0.157728, 0.971844, -1.89245, 1.96189, 0.91093)
+
+[node name="RightUpperForearm" parent="Body/RightUpperArm" index="2"]
+transform = Transform3D(0.773444, -0.567939, 0.281478, 0.599487, 0.799672, -0.0337692, -0.205911, 0.194861, 0.958973, -1.5, -0.39375, 0.9375)
+
+[node name="RightUpperHand" parent="Body/RightUpperArm/RightUpperForearm" index="4"]
+transform = Transform3D(0.914082, -0.178522, 0.364121, 0.130756, 0.979682, 0.152074, -0.383872, -0.0913973, 0.918852, -1.85241, -0.446747, 1.26591)
+
+[node name="RightUpperFinger1" parent="Body/RightUpperArm/RightUpperForearm/RightUpperHand" index="1"]
+transform = Transform3D(0.877142, 0.148802, -0.456597, -0.217105, 0.970946, -0.100643, 0.428355, 0.187408, 0.883963, -0.675394, -0.0744871, 0.242328)
+
+[node name="RightUpperFinger2" parent="Body/RightUpperArm/RightUpperForearm/RightUpperHand/RightUpperFinger1" index="1"]
+transform = Transform3D(0.961675, -0.240455, -0.131766, 0.207325, 0.952175, -0.224454, 0.179435, 0.188533, 0.965535, -0.358379, -0.124902, 0.219879)
+
+[node name="RightUpperIndex1" parent="Body/RightUpperArm/RightUpperForearm/RightUpperHand" index="2"]
+transform = Transform3D(0.939692, -0.34202, 0, 0.34202, 0.939693, 0, 0, 0, 1, -0.484849, -0.186167, 0.511947)
+
+[node name="RightUpperIndex2" parent="Body/RightUpperArm/RightUpperForearm/RightUpperHand/RightUpperIndex1" index="1"]
+transform = Transform3D(0.257553, -0.950759, 0.172407, 0.451361, -0.0393862, -0.891472, 0.854365, 0.307419, 0.418991, -0.369682, -0.111183, 0.186759)
+
+[node name="RightUpperThumb1" parent="Body/RightUpperArm/RightUpperForearm/RightUpperHand" index="3"]
+transform = Transform3D(0.843864, 0.0516326, 0.534067, 0.278855, 0.808173, -0.518744, -0.458402, 0.586677, 0.667591, -0.185827, -0.139263, 0.398709)
+
+[node name="RightUpperThumb2" parent="Body/RightUpperArm/RightUpperForearm/RightUpperHand/RightUpperThumb1" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.819152, -0.573576, 0, 0.573576, 0.819152, -0.117424, -0.171051, 0.292721)
+
+[node name="Tail1" parent="Body" index="36"]
+transform = Transform3D(0.999997, -0.00237405, 0.000287371, 0.00231624, 0.991445, 0.130505, -0.000594738, -0.130504, 0.991448, 0, -0.521234, 0)
+
+[node name="Tail2" parent="Body/Tail1" index="2"]
+transform = Transform3D(0.999999, -0.00157877, 0.000226146, 0.00155306, 0.996195, 0.0871414, -0.000362862, -0.087141, 0.996196, 0, -0.791266, 0)
+
+[node name="Tail3" parent="Body/Tail1/Tail2" index="2"]
+transform = Transform3D(0.999995, -0.00317124, 0.000313854, 0.00306859, 0.984808, 0.17362, -0.000859677, -0.173618, 0.984813, 0, -0.875, 0)
+
+[node name="Tail4" parent="Body/Tail1/Tail2/Tail3" index="2"]
+transform = Transform3D(0.999997, -0.00237405, 0.000287371, 0.00231624, 0.991445, 0.130505, -0.000594738, -0.130504, 0.991448, 0, -0.75, 0)
+
+[node name="Tail5" parent="Body/Tail1/Tail2/Tail3/Tail4" index="2"]
+transform = Transform3D(0.999992, 0.00380866, -0.00115718, -0.00396882, 0.976296, -0.216402, 0.000305545, 0.216405, 0.976304, 0, -0.5, 0)
