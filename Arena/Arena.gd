@@ -12,6 +12,7 @@ func _ready():
 	player.set_process_input(false)
 	intro_anim.play("introduction")
 	await intro_anim.animation_finished
+	player.start()
 	player.set_process(true)
 	player.set_process_input(true)
 	player.get_camera().make_current()

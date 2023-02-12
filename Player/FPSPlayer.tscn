@@ -1,8 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://cws0ksj5f52bt"]
+[gd_scene load_steps=39 format=3 uid="uid://cws0ksj5f52bt"]
 
 [ext_resource type="Script" path="res://Player/FPSPlayer.gd" id="1_p25ft"]
 [ext_resource type="PackedScene" uid="uid://1c1om8ufs6bt" path="res://Player/Asset/player_model.tscn" id="1_xw5tp"]
 [ext_resource type="Material" uid="uid://dy55v4bgvo7o2" path="res://Player/Asset/player_mat.tres" id="2_waqn3"]
+[ext_resource type="AudioStream" uid="uid://bn1neax8q5qrr" path="res://Player/Asset/SFX/sword_out.ogg" id="4_3f2sa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_70tml"]
 radius = 0.570631
@@ -428,6 +429,231 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_x26ms")
 
+[sub_resource type="BoxMesh" id="BoxMesh_aajke"]
+
+[sub_resource type="Animation" id="Animation_vvpw6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightUpperArm:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.609969, -0.671395, 0.563971)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightUpperArm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0074875, 3.14159, -3.61574e-08)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightUpperArm/RightLowerArm:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LeftUpperArm:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.534809, -0.664613, 0.556883)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LeftUpperArm:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LeftUpperArm/LeftLowerArm:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.86265e-09, 2.91038e-09, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_darnn"]
+resource_name = "idle"
+length = 0.7
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightUpperArm:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.609969, -0.671395, 0.563971), Vector3(0.609969, -0.678247, 0.563971)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightUpperArm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.50381, -0.081785, -3.05962), Vector3(-1.48634, -0.625192, -2.51551)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightUpperArm/RightLowerArm:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LeftUpperArm:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.534809, -0.664613, 0.556883)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LeftUpperArm:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LeftUpperArm/LeftLowerArm:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.86265e-09, 2.91038e-09, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6l5a0"]
+resource_name = "sword_out"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightUpperArm:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4, 0.5, 0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.163855, -0.827583, -0.777731), Vector3(0.420151, -0.999235, -1.76276), Vector3(-0.1148, -0.978292, -2.30718), Vector3(-0.234544, -1.2701, -1.95387), Vector3(-0.837532, -2.07775, -1.40325), Vector3(-1.50381, -0.081785, -3.05962)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightUpperArm:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4, 0.5, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.609969, -0.671395, 0.563971), Vector3(0.609969, -0.669551, -0.115064), Vector3(0.609969, -0.671395, -0.193881), Vector3(0.66771, -0.669906, -0.170385), Vector3(0.704901, -0.455003, 0.0957026), Vector3(0.584401, -0.600864, 0.331785), Vector3(0.609969, -0.671395, 0.563971)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightUpperArm/RightLowerArm:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.723973, -4.47035e-08, 0), Vector3(-0.361773, -7.08827e-08, 3.18649e-08), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k6vhi"]
+_data = {
+"RESET": SubResource("Animation_vvpw6"),
+"idle": SubResource("Animation_darnn"),
+"sword_out": SubResource("Animation_6l5a0")
+}
+
 [node name="FPSPlayer" type="CharacterBody3D"]
 script = ExtResource("1_p25ft")
 
@@ -489,93 +715,133 @@ shape = SubResource("CapsuleShape3D_70tml")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.05434, -0.519242)
 fov = 90.0
 
-[node name="PlayerFPSHands" type="Node3D" parent="Camera3D"]
-transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, -0.536166, 0.519242)
+[node name="PlayerFPSHands" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.05434, -0.519242)
 
-[node name="LeftUpperArm" type="Node3D" parent="Camera3D/PlayerFPSHands"]
-transform = Transform3D(0.984808, -0.173648, 0, 0.173648, 0.984808, 0, 0, 0, 1, 0.4375, -0.0465849, 0)
+[node name="LeftUpperArm" type="Node3D" parent="PlayerFPSHands"]
+transform = Transform3D(-1, 0, -2.53518e-06, 0, 1, 0, 2.53518e-06, 0, -1, -0.534809, -0.664613, 0.556883)
 
-[node name="cube009" type="MeshInstance3D" parent="Camera3D/PlayerFPSHands/LeftUpperArm"]
+[node name="cube009" type="MeshInstance3D" parent="PlayerFPSHands/LeftUpperArm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.0625, 0)
+material_override = ExtResource("2_waqn3")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_7i1db")
 skeleton = NodePath("")
 
-[node name="cube010" type="MeshInstance3D" parent="Camera3D/PlayerFPSHands/LeftUpperArm"]
+[node name="cube010" type="MeshInstance3D" parent="PlayerFPSHands/LeftUpperArm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.0625, 0)
+material_override = ExtResource("2_waqn3")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_ng8sk")
 skeleton = NodePath("")
 
-[node name="cube011" type="MeshInstance3D" parent="Camera3D/PlayerFPSHands/LeftUpperArm"]
+[node name="cube011" type="MeshInstance3D" parent="PlayerFPSHands/LeftUpperArm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.0625, 0)
+material_override = ExtResource("2_waqn3")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_o0f16")
 skeleton = NodePath("")
 
-[node name="LeftLowerArm" type="Node3D" parent="Camera3D/PlayerFPSHands/LeftUpperArm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0625, -0.5, 0)
+[node name="LeftLowerArm" type="Node3D" parent="PlayerFPSHands/LeftUpperArm"]
+transform = Transform3D(1, 5.42102e-18, 2.91038e-09, 0, 1, -1.86265e-09, -2.91038e-09, 1.86265e-09, 1, 0.0624999, -0.5, 0)
 
-[node name="cube012" type="MeshInstance3D" parent="Camera3D/PlayerFPSHands/LeftUpperArm/LeftLowerArm"]
+[node name="cube012" type="MeshInstance3D" parent="PlayerFPSHands/LeftUpperArm/LeftLowerArm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8125, 0.5625, 0)
+material_override = ExtResource("2_waqn3")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_lattw")
 skeleton = NodePath("")
 
-[node name="cube013" type="MeshInstance3D" parent="Camera3D/PlayerFPSHands/LeftUpperArm/LeftLowerArm"]
+[node name="cube013" type="MeshInstance3D" parent="PlayerFPSHands/LeftUpperArm/LeftLowerArm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8125, 0.5625, 0)
+material_override = ExtResource("2_waqn3")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_qwton")
 skeleton = NodePath("")
 
-[node name="cube014" type="MeshInstance3D" parent="Camera3D/PlayerFPSHands/LeftUpperArm/LeftLowerArm"]
+[node name="cube014" type="MeshInstance3D" parent="PlayerFPSHands/LeftUpperArm/LeftLowerArm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8125, 0.5625, 0)
+material_override = ExtResource("2_waqn3")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_sgeyi")
 skeleton = NodePath("")
 
-[node name="LeftHand" type="Node3D" parent="Camera3D/PlayerFPSHands/LeftUpperArm/LeftLowerArm"]
+[node name="LeftHand" type="Node3D" parent="PlayerFPSHands/LeftUpperArm/LeftLowerArm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8125, 0.5625, 0)
 
-[node name="cube015" type="MeshInstance3D" parent="Camera3D/PlayerFPSHands/LeftUpperArm/LeftLowerArm/LeftHand"]
+[node name="cube015" type="MeshInstance3D" parent="PlayerFPSHands/LeftUpperArm/LeftLowerArm/LeftHand"]
+material_override = ExtResource("2_waqn3")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_0mgsh")
 skeleton = NodePath("")
 
-[node name="RightUpperArm" type="Node3D" parent="Camera3D/PlayerFPSHands"]
-transform = Transform3D(0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0, 1, -0.4375, -0.0465849, 0)
+[node name="RightUpperArm" type="Node3D" parent="PlayerFPSHands"]
+transform = Transform3D(-1, -1.71754e-08, 2.53511e-06, -3.61564e-08, 0.999972, -0.00748743, -2.53491e-06, -0.00748743, -0.999972, 0.609969, -0.671395, 0.563971)
 
-[node name="cube016" type="MeshInstance3D" parent="Camera3D/PlayerFPSHands/RightUpperArm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0625, 0)
+[node name="cube016" type="MeshInstance3D" parent="PlayerFPSHands/RightUpperArm"]
+transform = Transform3D(1, 0, -1.69309e-15, 0, 1, 0, 1.26843e-14, 0, 1, 0.75, 0.0625, 0)
+material_override = ExtResource("2_waqn3")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_j2axn")
 skeleton = NodePath("")
 
-[node name="cube017" type="MeshInstance3D" parent="Camera3D/PlayerFPSHands/RightUpperArm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0625, 0)
+[node name="cube017" type="MeshInstance3D" parent="PlayerFPSHands/RightUpperArm"]
+transform = Transform3D(1, 0, -1.69309e-15, 0, 1, 0, 1.26843e-14, 0, 1, 0.75, 0.0625, 0)
+material_override = ExtResource("2_waqn3")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_qhy8h")
 skeleton = NodePath("")
 
-[node name="cube018" type="MeshInstance3D" parent="Camera3D/PlayerFPSHands/RightUpperArm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0625, 0)
+[node name="cube018" type="MeshInstance3D" parent="PlayerFPSHands/RightUpperArm"]
+transform = Transform3D(1, 0, -1.69309e-15, 0, 1, 0, 1.26843e-14, 0, 1, 0.75, 0.0625, 0)
+material_override = ExtResource("2_waqn3")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_1ghiw")
 skeleton = NodePath("")
 
-[node name="RightLowerArm" type="Node3D" parent="Camera3D/PlayerFPSHands/RightUpperArm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+[node name="RightLowerArm" type="Node3D" parent="PlayerFPSHands/RightUpperArm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 1.19209e-07)
 
-[node name="cube019" type="MeshInstance3D" parent="Camera3D/PlayerFPSHands/RightUpperArm/RightLowerArm"]
+[node name="cube019" type="MeshInstance3D" parent="PlayerFPSHands/RightUpperArm/RightLowerArm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.5625, 0)
+material_override = ExtResource("2_waqn3")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_p34ln")
 skeleton = NodePath("")
 
-[node name="cube020" type="MeshInstance3D" parent="Camera3D/PlayerFPSHands/RightUpperArm/RightLowerArm"]
+[node name="cube020" type="MeshInstance3D" parent="PlayerFPSHands/RightUpperArm/RightLowerArm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.5625, 0)
+material_override = ExtResource("2_waqn3")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_jyski")
 skeleton = NodePath("")
 
-[node name="cube021" type="MeshInstance3D" parent="Camera3D/PlayerFPSHands/RightUpperArm/RightLowerArm"]
+[node name="cube021" type="MeshInstance3D" parent="PlayerFPSHands/RightUpperArm/RightLowerArm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.5625, 0)
+material_override = ExtResource("2_waqn3")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_ulmji")
 skeleton = NodePath("")
 
-[node name="RightHand" type="Node3D" parent="Camera3D/PlayerFPSHands/RightUpperArm/RightLowerArm"]
+[node name="RightHand" type="Node3D" parent="PlayerFPSHands/RightUpperArm/RightLowerArm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.5625, 0)
 
-[node name="cube022" type="MeshInstance3D" parent="Camera3D/PlayerFPSHands/RightUpperArm/RightLowerArm/RightHand"]
+[node name="cube022" type="MeshInstance3D" parent="PlayerFPSHands/RightUpperArm/RightLowerArm/RightHand"]
+material_override = ExtResource("2_waqn3")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_yd6a6")
 skeleton = NodePath("")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerFPSHands/RightUpperArm/RightLowerArm"]
+transform = Transform3D(-0.0241283, 1.81188e-07, 2.39064e-10, 2.46331e-16, -0.0377322, 0.150206, 2.10936e-09, 2.07254, 0.0027346, -0.0196971, -0.697667, 0.737855)
+mesh = SubResource("BoxMesh_aajke")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerFPSHands"]
+libraries = {
+"": SubResource("AnimationLibrary_k6vhi")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PlayerFPSHands"]
+stream = ExtResource("4_3f2sa")
 
 [editable path="Player_model"]

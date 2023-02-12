@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://1kta0jcq3cne"]
+[gd_scene load_steps=11 format=3 uid="uid://1kta0jcq3cne"]
 
+[ext_resource type="Script" path="res://Player/TestFPSPlayer.gd" id="1_n4mff"]
 [ext_resource type="PackedScene" uid="uid://cws0ksj5f52bt" path="res://Player/FPSPlayer.tscn" id="1_sqf5a"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_fadf5"]
@@ -27,6 +28,7 @@ ssao_enabled = true
 glow_enabled = true
 
 [node name="TestFPSPlayer" type="Node3D"]
+script = ExtResource("1_n4mff")
 
 [node name="FPSPlayer" parent="." instance=ExtResource("1_sqf5a")]
 
