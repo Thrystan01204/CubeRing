@@ -28,9 +28,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.648306, 0)
 
 [node name="AimCast" type="RayCast3D" parent="Head/Camera3D"]
 
-[node name="Hand" type="MeshInstance3D" parent="Head"]
-transform = Transform3D(0.977025, -0.0243285, -0.211729, 0.17701, 0.645925, 0.742596, 0.118695, -0.763013, 0.635392, 0, -0.511172, -1.22052)
+[node name="Hand" type="MeshInstance3D" parent="Head/Camera3D"]
+transform = Transform3D(0.980052, -0.0127022, -0.198333, 0.198651, 0.032943, 0.979517, -0.00590811, -0.999377, 0.0348094, -0.427142, -0.272167, -0.571121)
 mesh = SubResource("CylinderMesh_bwc03")
+skeleton = NodePath("../..")
 
-[node name="Core" type="Node3D" parent="Head/Hand"]
-transform = Transform3D(1, 0, -7.45058e-09, 2.98023e-08, 1, 2.68221e-07, 7.45058e-09, 0, 1, 0.018066, 0.961959, -0.0271674)
+[node name="Core" type="Node3D" parent="Head/Camera3D/Hand"]
+transform = Transform3D(0.993173, -0.00402036, -0.116582, 0.00410099, 0.999991, 0.000451714, 0.116579, -0.000926662, 0.993181, 0.487817, 0.771406, -0.171903)
+
+[node name="Hand" type="MeshInstance3D" parent="Head/Camera3D/Hand"]
+transform = Transform3D(0.974008, 0.225741, -0.0186776, -0.22635, 0.966884, -0.117899, -0.0085559, 0.119062, 0.99285, 0.776305, -0.271469, -0.346831)
+mesh = SubResource("CylinderMesh_bwc03")
