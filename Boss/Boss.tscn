@@ -14,14 +14,8 @@ script = ExtResource("1_mv3ws")
 [node name="Boss_model" parent="Pivot" instance=ExtResource("2_0dm48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0069885, 0)
 
-[node name="LeftLowerArm" parent="Pivot/Boss_model/Body" index="25"]
-transform = Transform3D(0.994274, -0.0833467, 0.0668724, 0.0838928, 0.99646, -0.00539519, -0.066186, 0.0109744, 0.997747, 1.0362, 0.486894, -0.11407)
-
 [node name="LeftLowerThumb1" parent="Pivot/Boss_model/Body/LeftLowerArm/LeftLowerForearm/LeftLowerHand" index="3"]
-transform = Transform3D(0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.939692, 0.185827, -0.139263, 0.398709)
-
-[node name="LeftUpperHand" parent="Pivot/Boss_model/Body/LeftUpperArm/LeftUpperForearm" index="4"]
-transform = Transform3D(0.637882, -0.0911222, -0.764724, 0.315238, 0.936872, 0.151315, 0.702661, -0.337591, 0.626339, 1.85241, -0.446747, 1.26591)
+transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871558, 0, 0.996194, 0.185827, -0.139263, 0.398709)
 
 [node name="RightLowerHand" parent="Pivot/Boss_model/Body/RightLowerArm/RightLowerForearm" index="4"]
 transform = Transform3D(0.855493, -0.509966, -0.0898172, 0.42232, 0.787515, -0.44885, 0.299631, 0.346057, 0.889081, -1.85241, -0.446747, 1.26591)
