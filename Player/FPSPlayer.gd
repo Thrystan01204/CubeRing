@@ -68,6 +68,7 @@ func _physics_process(delta):
 func _input(event):
 	if not InitDone:
 		return
+		
 	# Mouse Look
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * look_sensivity)

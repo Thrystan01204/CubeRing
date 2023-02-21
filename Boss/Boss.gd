@@ -6,6 +6,7 @@ const JUMP_VELOCITY = 4.5
 
 @onready var anim = $AnimationPlayer
 
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -17,14 +18,6 @@ func initialize(start_position, player_position):
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-
-	# Handle Jump.
-	if is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
 	move_and_slide()
 
 func _process(delta):

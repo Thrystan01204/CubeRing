@@ -1,31 +1,201 @@
-[gd_scene load_steps=4 format=3 uid="uid://domruga4hdvry"]
+[gd_scene load_steps=19 format=3 uid="uid://domruga4hdvry"]
 
 [ext_resource type="Script" path="res://Boss/Boss.gd" id="1_mv3ws"]
 [ext_resource type="PackedScene" uid="uid://cbnyxt7gmmpeg" path="res://Boss/Asset/boss_model.tscn" id="2_0dm48"]
+[ext_resource type="AudioStream" uid="uid://c3ob4trpr5tgd" path="res://Boss/Asset/musiques/impact.ogg" id="3_323u2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_48qq8"]
 size = Vector3(5.38172, 9.75097, 3.32663)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_qips1"]
+size = Vector3(5.60943, 1, 4.77453)
+
+[sub_resource type="Animation" id="Animation_nd8qm"]
+resource_name = "smash"
+length = 2.0833
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss_model/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("smash"),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HurtBoxes/Smash/CollisionShape3D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Particles/SmashParticles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/SmashAudio:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_34m7e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HurtBoxes/Smash/CollisionShape3D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_no2gh"]
+resource_name = "intro"
+length = 1.5417
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss_model/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("Intro"),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_60daj"]
+resource_name = "idle"
+length = 1.25
+loop_mode = 1
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss_model/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("Idle_flying"),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jd5d8"]
+_data = {
+"RESET": SubResource("Animation_34m7e"),
+"idle": SubResource("Animation_60daj"),
+"intro": SubResource("Animation_no2gh"),
+"smash": SubResource("Animation_nd8qm")
+}
+
+[sub_resource type="Curve" id="Curve_y2l1q"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.239264), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ky2gu"]
+curve = SubResource("Curve_y2l1q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ib21b"]
+particle_flag_align_y = true
+direction = Vector3(1, 10, 0)
+spread = 20.0
+gravity = Vector3(0, -40, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 15.0
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_ky2gu")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.5
+
+[sub_resource type="Gradient" id="Gradient_86vvb"]
+colors = PackedColorArray(0.382858, 0.188903, 0.0473204, 1, 0.933679, 0.63932, 0.545342, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5a6ov"]
+frequency = 0.146
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yusts"]
+width = 16
+height = 16
+color_ramp = SubResource("Gradient_86vvb")
+noise = SubResource("FastNoiseLite_5a6ov")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22k8r"]
+albedo_texture = SubResource("NoiseTexture2D_yusts")
+emission_energy_multiplier = 0.0
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_c5qtn"]
+material = SubResource("StandardMaterial3D_22k8r")
+
 [node name="Boss" type="CharacterBody3D"]
 script = ExtResource("1_mv3ws")
-
-[node name="Pivot" type="Node3D" parent="."]
-
-[node name="Boss_model" parent="Pivot" instance=ExtResource("2_0dm48")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0069885, 0)
-
-[node name="LeftLowerThumb1" parent="Pivot/Boss_model/Body/LeftLowerArm/LeftLowerForearm/LeftLowerHand" index="3"]
-transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871558, 0, 0.996194, 0.185827, -0.139263, 0.398709)
-
-[node name="RightLowerHand" parent="Pivot/Boss_model/Body/RightLowerArm/RightLowerForearm" index="4"]
-transform = Transform3D(0.855493, -0.509966, -0.0898172, 0.42232, 0.787515, -0.44885, 0.299631, 0.346057, 0.889081, -1.85241, -0.446747, 1.26591)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.82182, 1.36306)
 shape = SubResource("BoxShape3D_48qq8")
 
+[node name="HurtBoxes" type="Node3D" parent="."]
+
+[node name="Smash" type="Area3D" parent="HurtBoxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.44184)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBoxes/Smash"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.86487)
+shape = SubResource("BoxShape3D_qips1")
+
+[node name="Boss_model" parent="." instance=ExtResource("2_0dm48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0069885, 0)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jd5d8")
+}
 
-[connection signal="area_entered" from="Pivot/Boss_model/Smash" to="." method="_on_smash_area_entered"]
+[node name="Particles" type="Node3D" parent="."]
 
-[editable path="Pivot/Boss_model"]
+[node name="SmashParticles" type="GPUParticles3D" parent="Particles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138082, 0.146366, 3.84427)
+emitting = false
+amount = 16
+lifetime = 2.0
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+randomness = 0.18
+process_material = SubResource("ParticleProcessMaterial_ib21b")
+draw_pass_1 = SubResource("BoxMesh_c5qtn")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Particles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138082, -0.976564, 3.84427)
+size = Vector3(14, 2, 14)
+
+[node name="SFX" type="Node3D" parent="."]
+
+[node name="SmashAudio" type="AudioStreamPlayer3D" parent="SFX"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138082, 0.146366, 3.84427)
+stream = ExtResource("3_323u2")
